@@ -101,4 +101,4 @@ Un único fichero, sin scripts ni referencias externas.
 
 ## Licencia
 
-MIT
+GPLv2
