@@ -44,6 +44,9 @@ Es la parte que evita el error más caro de un brief mal hecho:
 Lo que cae en la columna derecha va a la sección `Out of theme scope` del brief, con el plugin
 propuesto y un responsable — no a la lista de trabajo del tema.
 
+La referencia canónica para el argumento de los CPTs es el
+[Theme Handbook, sección plugin territory](https://developer.wordpress.org/themes/advanced-topics/plugin-api/).
+
 ## Salida
 
 `BRIEF.md` con 12 secciones: identity (slug, text domain, WP mínimo, versión de `theme.json`),
@@ -59,11 +62,11 @@ out of theme scope, preguntas abiertas y orden de construcción.
 **Claude Code (local):**
 
 ```bash
-git clone https://github.com/<tu-org>/wp-block-theme-brief.git \
-  ~/.claude/skills/wp-block-theme-brief
+git clone https://github.com/PabloMoratinos/WordPress-AI-tools.git
+cp -r WordPress-AI-tools/skills/wp-block-theme-brief ~/.claude/skills/
 ```
 
-**Repo de proyecto:** copia la carpeta en `.claude/skills/` del repo.
+**Repo de proyecto:** copia la carpeta `wp-block-theme-brief/` en `.claude/skills/` del repo.
 
 ## Uso
 
@@ -84,14 +87,19 @@ Encadenado con el desarrollo:
 /wp-block-themes BRIEF.md      → style.css → theme.json → parts/ → templates/ → patterns/ → styles/
 ```
 
+## Skill hermana
+
+[`wp-block-brief`](https://github.com/PabloMoratinos/WordPress-AI-tools/tree/main/skills/wp-block-brief) hace lo mismo para bloques
+individuales del editor, con entrega a `wp-block-development`. Misma estructura: express →
+profundidad opcional → defaults → cortes de alcance → brief.
+
 ## Estructura
 
 ```
 wp-block-theme-brief/
-└── SKILL.md
+├── SKILL.md
+└── README.md
 ```
-
-Un único fichero, sin scripts ni referencias externas.
 
 ## Requisitos
 
@@ -101,4 +109,14 @@ Un único fichero, sin scripts ni referencias externas.
 
 ## Licencia
 
-GPLv2
+Copyright (C) 2026 Pablo Moratinos
+
+Este programa es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la
+GNU General Public License publicada por la Free Software Foundation, en su versión 2 o
+cualquier versión posterior.
+
+Se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, ni siquiera la
+garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulta la
+GNU General Public License para más detalles: [`LICENSE`](../../LICENSE).
+
+Misma licencia que WordPress y que los temas que esta skill ayuda a especificar.
